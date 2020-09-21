@@ -13,9 +13,8 @@ $("#gallery").fadeTo(300, 1);
 
 
 $('.modal').on('show.bs.modal', function () {
-	$(this).find('.modal-dialog').show();
-	$(this).find('.modal-body').show();
-	$(this).find('.modal-footer').show();
-	$(this).find('.modal-content').show();
-	console.log($(this).html());
+	let elements_hidden = $(this).find(":hidden");
+	$.each(elements_hidden, function(key,value){
+		$(this).show();
+	});
 })
